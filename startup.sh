@@ -9,7 +9,7 @@ if [ -f /etc/configured ]; then
         /sbin/zm.sh&
 else
         #to fix problem with data.timezone that appear at 1.28.108 for some reason
-        sed -i 's/\;date.timezone =/date.timezone = \"$PHP_TIMEZONE\"/' /etc/php/7.0/apache2/php.ini
+        sed -i 's/\;date.timezone =/date.timezone = \"'$PHP_TIMEZONE'\"/' /etc/php/7.0/apache2/php.ini
         #configuration for zoneminder
         #trays to fix problem with https://github.com/QuantumObject/docker-zoneminder/issues/22
         chown www-data /dev/shm
