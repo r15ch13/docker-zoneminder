@@ -1,7 +1,10 @@
 #!/bin/bash
 
 chown -R mysql:mysql /var/lib/mysql 
-rm -R /var/lib/mysql/* 
+rm -R /var/lib/mysql/*
+
+mkdir -p /var/run/mysqld
+chown -R mysql:mysql /var/run/mysqld
 
  #fix problem relate to update mysql
  rm /etc/mysql/my.cnf
